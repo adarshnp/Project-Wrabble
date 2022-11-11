@@ -101,6 +101,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -109,12 +111,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -132,9 +134,12 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -756,6 +761,33 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      alphabetSprites_25: 8361190605492223813
+      alphabetSprites_24: -3579687158867905349
+      alphabetSprites_7: -8834124692918684642
+      alphabetSprites_9: -1363401798524714995
+      alphabetSprites_1: -8069967716846065287
+      alphabetSprites_2: -8516659709361095413
+      alphabetSprites_3: 1596084885543151470
+      alphabetSprites_15: -8022590442979959453
+      alphabetSprites_4: -1314929541215272833
+      alphabetSprites_19: 3425351676237124628
+      alphabetSprites_18: 7081650343686260056
+      alphabetSprites_12: -1165075536398055442
+      alphabetSprites_17: 1218423241161027618
+      alphabetSprites_20: -8551329283515086873
+      alphabetSprites_0: -756464513007186234
+      alphabetSprites_13: -3576856558409824529
+      alphabetSprites_11: -8148170991461441113
+      alphabetSprites_6: 3692489883864625619
+      alphabetSprites_14: -4283554322475827099
+      alphabetSprites_16: 476008635047295533
+      alphabetSprites_8: 7576545473124551498
+      alphabetSprites_21: 4708925919049556335
+      alphabetSprites_5: 715108855909947766
+      alphabetSprites_10: -5275666297233486932
+      alphabetSprites_22: -7814568491782619420
+      alphabetSprites_23: -1496573887825766428
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
