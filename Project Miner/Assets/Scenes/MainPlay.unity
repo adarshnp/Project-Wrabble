@@ -959,7 +959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682231470}
-  - component: {fileID: 682231469}
+  - component: {fileID: 682231471}
   m_Layer: 0
   m_Name: Tile Pool
   m_TagString: Untagged
@@ -967,25 +967,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &682231469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682231468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef41a298e1153fc4c8deef86ef06825f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoxPrefab: {fileID: 5011259882277534446, guid: 6c6aeac9c5d5ee64bb407e9cf844ca73,
-    type: 3}
-  TilePrefab: {fileID: 2852529823625562645, guid: cc91f03fba99b84459b24a431d96e042,
-    type: 3}
-  tilesParent: {fileID: 1326392527}
-  wallsParent: {fileID: 184611042}
-  tilePoolData: {fileID: 11400000, guid: 4bba83a64c6b2a2498d93634be8470b7, type: 2}
 --- !u!4 &682231470
 Transform:
   m_ObjectHideFlags: 0
@@ -1003,6 +984,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &682231471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682231468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f298a5290c38b348a1ec0f927d35373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallsPrefab: {fileID: 5011259882277534446, guid: 6c6aeac9c5d5ee64bb407e9cf844ca73,
+    type: 3}
+  groundPrefab: {fileID: 5011259882277534446, guid: 6c6aeac9c5d5ee64bb407e9cf844ca73,
+    type: 3}
+  tilePrefab: {fileID: 2852529823625562645, guid: cc91f03fba99b84459b24a431d96e042,
+    type: 3}
+  wallsParent: {fileID: 184611042}
+  groundParent: {fileID: 682231470}
+  tileParent: {fileID: 1326392527}
+  GridSize: {x: 7, y: 2}
+  TileWidth: 1
+  TilePadding: 0.1
+  WallsWidth: 0.2
 --- !u!1 &710070143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,16 +1052,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 710070143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b95d4459bb0877341a3f76a96b633c2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f298a5290c38b348a1ec0f927d35373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoxPrefab: {fileID: 5011259882277534446, guid: 6c6aeac9c5d5ee64bb407e9cf844ca73,
+  wallsPrefab: {fileID: 5011259882277534446, guid: 6c6aeac9c5d5ee64bb407e9cf844ca73,
     type: 3}
-  CellPrefab: {fileID: 7328909711351743206, guid: 70c7bb5f761fd224c8deca466c0d8385,
+  groundPrefab: {fileID: 5011259882277534446, guid: 6c6aeac9c5d5ee64bb407e9cf844ca73,
     type: 3}
-  boardData: {fileID: 11400000, guid: 1951d3028ccd2744b9085c4c7919eec1, type: 2}
-  cellsParent: {fileID: 1090597994}
+  tilePrefab: {fileID: 7328909711351743206, guid: 70c7bb5f761fd224c8deca466c0d8385,
+    type: 3}
   wallsParent: {fileID: 1898478533}
+  groundParent: {fileID: 710070144}
+  tileParent: {fileID: 1090597994}
+  GridSize: {x: 7, y: 7}
+  TileWidth: 1
+  TilePadding: 0.1
+  WallsWidth: 0.2
 --- !u!1 &834759069
 GameObject:
   m_ObjectHideFlags: 0
