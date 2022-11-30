@@ -18,7 +18,7 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     private Transform _cam;
     private Camera cam;
-    private GameObject[] walls;
+    private Tile[] walls = new Tile[8];
     public float tileWidth;
     public float tilePadding;
     public float wallsWidth;
@@ -60,7 +60,7 @@ public class GridManager : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
-            walls[i] = Instantiate(wallsPrefab.gameObject, wallsParent);
+            walls[i] = Instantiate(wallsPrefab, wallsParent);
             walls[i].name = $"WallSection_{i}";
         }
         float posX, posY, midScaleX, midScaleY;
@@ -68,7 +68,7 @@ public class GridManager : MonoBehaviour
         posY = ((_row * tileWidth) + ((_row + 1) * tilePadding) + wallsWidth) / 2.0f;
         midScaleX = (_coloumn * tileWidth) + ((_coloumn + 1) * tilePadding);
         midScaleY = (_row * tileWidth) + ((_row + 1) * tilePadding);
-
+        wallsParent.transform.localPosition = new Vector3(_width / 2.0f, 1, _height / 2.0f);
         SetWallTransform(posX, posY, midScaleX, midScaleY);
     }
     void SetWallTransform(float posX, float posY, float midScaleX, float midScaleY)
