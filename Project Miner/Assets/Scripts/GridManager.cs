@@ -22,6 +22,7 @@ public class GridManager : MonoBehaviour
     public float tileWidth;
     public float tilePadding;
     public float wallsWidth;
+    public float boardWidth;
 
 
     private void Start()
@@ -42,16 +43,17 @@ public class GridManager : MonoBehaviour
         tileWidth = _width / (4.1f + (1.1f * _coloumn));//total width = wall width(2w + 2w) + total number of cells (Cw) + total padding(0.1*(C+1)w) => w(2+2+C+0.1C+0.1) => w(4.1 + 1.1C)  
         wallsWidth = 2 * tileWidth;
         tilePadding = 0.1f * tileWidth;
-
+        boardWidth = (_coloumn * tileWidth) + ((_coloumn + 1) * tilePadding);
     }
     void GenerateGrid()
     {
-        for (int i = 0; i < _width; i++)
+        for (int i = 0; i < _row; i++)
         {
-            for (int j = 0; j < _height; j++)
+            for (int j = 0; j < _coloumn; j++)
             {
                 var spawnedTile = Instantiate(_tilePrefab, new Vector3(i, 0, j), Quaternion.identity);
                 spawnedTile.name = $"Tile {i} {j}";
+                spawnedTile.gameObject.transform.localScale = new Vector3(tileWidth, 0.25f, tileWidth);
             }
         }
     }
@@ -64,10 +66,10 @@ public class GridManager : MonoBehaviour
             walls[i].name = $"WallSection_{i}";
         }
         float posX, posY, midScaleX, midScaleY;
-        posX = ((_coloumn * tileWidth) + ((_coloumn + 1) * tilePadding) + wallsWidth) / 2.0f;
-        posY = ((_row * tileWidth) + ((_row + 1) * tilePadding) + wallsWidth) / 2.0f;
-        midScaleX = (_coloumn * tileWidth) + ((_coloumn + 1) * tilePadding);
-        midScaleY = (_row * tileWidth) + ((_row + 1) * tilePadding);
+        posX = (boardWidth + wallsWidth) / 2.0f;
+        posY = (boardWidth + wallsWidth) / 2.0f;
+        midScaleX = boardWidth;
+        midScaleY = boardWidth;
         wallsParent.transform.localPosition = new Vector3(_width / 2.0f, 1, _height / 2.0f);
         SetWallTransform(posX, posY, midScaleX, midScaleY);
     }
