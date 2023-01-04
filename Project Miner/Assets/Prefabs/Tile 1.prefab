@@ -110,3 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5864e542c265cee4485289ce6d25e2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _normalTileColor: {r: 1, g: 1, b: 1, a: 0}
+  _doubleLetterTileColor: {r: 0.38412246, g: 0.38945416, b: 0.9811321, a: 0}
+  _tripleLetterTileColor: {r: 0.9811321, g: 0.38412246, b: 0.38412246, a: 0}
+  _doubleWordTileColor: {r: 0.9115152, g: 0.514151, b: 1, a: 0}
+  _tripleWordTileColor: {r: 0.94403607, g: 1, b: 0.4292453, a: 0}
+  _centerTileColor: {r: 0.3820755, g: 1, b: 0.5426397, a: 0}
+  _renderer: {fileID: 0}

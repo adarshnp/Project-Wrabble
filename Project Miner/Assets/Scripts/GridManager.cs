@@ -16,6 +16,8 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     private Transform wallsParent;
     [SerializeField]
+    private Transform tilesParent;
+    [SerializeField]
     private Transform _cam;
     private Camera cam;
     private Tile[] walls = new Tile[8];
@@ -23,6 +25,7 @@ public class GridManager : MonoBehaviour
     public float tilePadding;
     public float wallsWidth;
     public float boardWidth;
+    private Vector3 boardPos;
 
 
     private void Start()
@@ -44,18 +47,29 @@ public class GridManager : MonoBehaviour
         wallsWidth = 2 * tileWidth;
         tilePadding = 0.1f * tileWidth;
         boardWidth = (_coloumn * tileWidth) + ((_coloumn + 1) * tilePadding);
+        boardPos.x = _width / 2.0f;
+        boardPos.z = _height / 2.0f;
+        boardPos.y = 1;
     }
+
     void GenerateGrid()
     {
+        float tilePosX, tilePosY;
+        tilePosX = 0 - boardWidth / 2.0f + tileWidth / 2.0f + tilePadding;
+        tilePosY = 0 - boardWidth / 2.0f + tileWidth / 2.0f + tilePadding;
         for (int i = 0; i < _row; i++)
         {
             for (int j = 0; j < _coloumn; j++)
             {
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(i, 0, j), Quaternion.identity);
+                var spawnedTile = Instantiate(_tilePrefab, new Vector3(tilePosX, 1, tilePosY), Quaternion.identity, tilesParent);
                 spawnedTile.name = $"Tile {i} {j}";
                 spawnedTile.gameObject.transform.localScale = new Vector3(tileWidth, 0.25f, tileWidth);
+                tilePosX = tilePosX + tileWidth + tilePadding;
             }
+            tilePosY = tilePosY + tileWidth + tilePadding;
+            tilePosX = 0 - boardWidth / 2.0f + tileWidth / 2.0f + tilePadding;
         }
+        tilesParent.transform.position = boardPos;
     }
     //Assuming wall width is 2 times coloumn width
     private void ArrangeWalls()
